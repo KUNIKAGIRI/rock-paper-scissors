@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Avatar Selection Page -->
+    <div class="page" id="avatar-page">
+        <div class="container">
+            <h1>Select Avatars</h1>
+            <div class="avatar-select">
+                <p>Player 1</p>
+                <div id="avatar-options-1" class="avatars">
+                    <div class="avatar-wrapper" data-player="1" data-avatar="assets/avatar1.avif" onclick="selectAvatar(1, 'assets/avatar1.avif', this)">
+                        <img src="assets/avatar1.avif" alt="Avatar 1" />
+                        <div class="tick">&#10003;</div>
+                    </div>
+                    <div class="avatar-wrapper" data-player="1" data-avatar="assets/avatar2.avif" onclick="selectAvatar(1, 'assets/avatar2.avif', this)">
+                        <img src="assets/avatar2.avif" alt="Avatar 2" />
+                        <div class="tick">&#10003;</div>
+                    </div>
+                </div>
+
+                <p>Player 2</p>
+                <div id="avatar-options-2" class="avatars">
+                    <div class="avatar-wrapper" data-player="2" data-avatar="assets/avatar3.avif" onclick="selectAvatar(2, 'assets/avatar3.avif', this)">
+                        <img src="assets/avatar3.avif" alt="Avatar 3" />
+                        <div class="tick">&#10003;</div>
+                    </div>
+                    <div class="avatar-wrapper" data-player="2" data-avatar="assets/avatar4.avif" onclick="selectAvatar(2, 'assets/avatar4.avif', this)">
+                        <img src="assets/avatar4.avif" alt="Avatar 4" />
+                        <div class="tick">&#10003;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Page -->
+    <div class="page hidden" id="game-page">
+        <div class="container">
+            <h1>Rock Paper Scissors</h1>
+            <div class="avatars-display">
+                <img id="avatar1" class="avatar" alt="Player 1 Avatar" />
+                <img id="avatar2" class="avatar" alt="Player 2 Avatar" />
+            </div>
+
+            <div id="player1" class="choices">
+                <h2>Player 1</h2>
+                <button data-choice="rock"><img src="assets/rock.png" alt="Rock" /></button>
+                <button data-choice="paper"><img src="assets/paper.png" alt="Paper" /></button>
+                <button data-choice="scissors"><img src="assets/scissors.png" alt="Scissors" /></button>
+            </div>
+
+            <div id="player2" class="choices hidden">
+                <h2>Player 2</h2>
+                <button data-choice="rock"><img src="assets/rock.png" alt="Rock" /></button>
+                <button data-choice="paper"><img src="assets/paper.png" alt="Paper" /></button>
+                <button data-choice="scissors"><img src="assets/scissors.png" alt="Scissors" /></button>
+            </div>
+
+            <div class="scoreboard">
+                <p>Player 1 Score: <span id="score1">0</span></p>
+                <p>Player 2 Score: <span id="score2">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Page -->
+    <div class="page hidden" id="result-page">
+        <div class="container result-container">
+            <h1 class="result-heading">🎉 Result 🎉</h1>
+            <div class="result-box">
+                <p id="result-text" class="result-message"></p>
+            </div>
+            <div class="result-buttons">
+                <button id="play-again">🔁 Play Again</button>
+                <button id="reset-game">🔄 Reset Game</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Audio -->
+    <audio id="click-sound" src="assets/click.mp3"></audio>
+    <audio id="bg-music" src="assets/background.mp3" loop></audio>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
